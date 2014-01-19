@@ -1,12 +1,14 @@
 # RGBLED
 
-## Using the PiBlaster interface
+## Examples
+
+### Using the PiBlaster interface
 
 ```erlang
 pi_blaster:set_pin(11, 1). % Set pin 11 to 100% on
 ```
 
-## Using an RGB LED without state
+### Using an RGB LED without state
 
 ```erlang
 % assuming pins 23, 24, 25 for red, green, blue respectively...
@@ -15,7 +17,7 @@ RgbLed1 = rgb_led:set_value(red, 1, RgbLed).
 rgb_led:pi_blast(RgbLed1). % This updates their values...
 ```
 
-## Using an RGB LED with state
+### Using an RGB LED with state
 
 ```erlang
 % assuming pins 23, 24, 25 for red, green, blue respectively...
@@ -24,7 +26,6 @@ Pid ! {red, 1}.
 Pid ! blast.
 ```
 
-## Examples
 ### To cycle the led through a lot of pretty colors
 
 ```erlang
