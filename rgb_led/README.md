@@ -26,7 +26,7 @@ Pid ! {red, 1}.
 Pid ! blast.
 ```
 
-### To cycle the led through a lot of pretty colors
+### To cycle the LED through a lot of pretty colors
 
 ```erlang
 c('examples/rainbow.erl').
