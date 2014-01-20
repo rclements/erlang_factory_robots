@@ -26,6 +26,20 @@ Pid ! {red, 1}.
 Pid ! blast.
 ```
 
+### Using Distribution to control an RGB LED
+
+Start one node on the raspberrypi with `erl -name "raspi@192.168.1.46"`.  Start
+one locally with `erl -name "laptop@192.168.1.22"`
+
+On the `laptop` erl shell, run the following:
+
+```erlang
+% assuming pins 23, 24, 25 for red, green, blue respectively...
+{:ok, Pid} = rgb_led_server:start(23, 24, 25).
+Pid ! {red, 1}.
+Pid ! blast.
+```
+
 ### To cycle the LED through a lot of pretty colors
 
 ```erlang
