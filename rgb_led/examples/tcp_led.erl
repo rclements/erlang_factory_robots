@@ -1,8 +1,8 @@
 -module(tcp_led).
--export([start/3]).
+-export([start/4]).
 
-start(Red, Green, Blue) ->
-  {ok, LSock} = gen_tcp:listen(5678, [binary, {packet, 0}, 
+start(Port, Red, Green, Blue) ->
+  {ok, LSock} = gen_tcp:listen(Port, [binary, {packet, 0}, 
                                       {active, false}]),
   do_accept(LSock, {Red, Green, Blue}).
 
@@ -28,10 +28,11 @@ handle_data(Data, Pid) ->
 
 extract_values(Data) ->
   {match, [Red, Green, Blue]} = re:run(Data, value_extractor(), [{capture, ['RED', 'GREEN', 'BLUE'], list}]),
+  io:format("red: ~p, green: ~p, blue: ~p\n", [Red, Green, Blue]),
   {input_to_num(Red), input_to_num(Green), input_to_num(Blue)}.
 
 value_extractor() ->
-  "R(?<RED>[0-9.]+)G(?<GREEN>[0-9.]+)B(?<BLUE>[0-9.]).*".
+  "R(?<RED>[0-9.]+)G(?<GREEN>[0-9.]+)B(?<BLUE>[0-9.]+).*".
 
 input_to_num(N) ->
   case string:to_float(N) of

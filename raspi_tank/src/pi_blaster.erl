@@ -2,6 +2,7 @@
 -export([set_pin/2]).
 
 set_pin(Pin, Value) ->
+  io:format("~p", [build_command(Pin, Value)]),
   os:cmd(build_command(Pin, Value)).
 
 build_command(Pin, Value) ->
