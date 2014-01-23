@@ -29,6 +29,6 @@ defmodule RgbLed.Server do
   end
   defp do_update({color, value}, state) do
     IO.inspect "do_update {#{color}, #{value}}, #{state}"
-    Led.set_value(color, value, state)
+    state |> Led.set_value(color, value)
   end
 end

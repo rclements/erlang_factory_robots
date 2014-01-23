@@ -1,6 +1,6 @@
 defmodule Rainbow do
   def run do
-    {ok, pid} = RgbLed.Server.start([23, 24, 25])
+    {:ok, pid} = RgbLed.Server.start([23, 24, 25])
     values |> Enum.each(fn(vals) -> update(vals, pid) end)
   end
 
