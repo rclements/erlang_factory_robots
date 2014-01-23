@@ -19,6 +19,7 @@ defmodule RgbLed.Server do
     state |> Led.set_value(:blue, value) |> new_state
   end
   defcast blast, state: state do
+    IO.puts "blast"
     state |> Led.pi_blast
   end
 
