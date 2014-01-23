@@ -9,9 +9,9 @@ defmodule RgbLed.Led do
   end
 
   def pi_blast(component) do
-    pi_blast(:red, component)
-    pi_blast(:green, component)
-    pi_blast(:blue, component)
+    component |> pi_blast(:red)
+    component |> pi_blast(:green)
+    component |> pi_blast(:blue)
   end
 
   def set_value(component, color, value) do
@@ -35,13 +35,13 @@ defmodule RgbLed.Led do
   end
 
   def get_value(component, color) do
-    component |> get_pin(color).value
+    get_pin(component, color).value
   end
 
   def inverted_value(value), do: 1 - value
 
   def pi_blast(component, color) do
-    pin = component |> get_pin(color)
+    pin = get_pin(component, color)
     PiBlaster.set_pin(pin.number, inverted_value(pin.value))
   end
 end
