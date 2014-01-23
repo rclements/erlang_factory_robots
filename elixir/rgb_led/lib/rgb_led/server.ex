@@ -10,16 +10,16 @@ defmodule RgbLed.Server do
     do_update(values, state) |> new_state
   end
   defcast red(value), state: state do
-    Led.set_value(:red, value, state) |> new_state
+    state |> Led.set_value(:red, value) |> new_state
   end
   defcast green(value), state: state do
-    Led.set_value(:green, value, state) |> new_state
+    state |> Led.set_value(:green, value) |> new_state
   end
   defcast blue(value), state: state do
-    Led.set_value(:blue, value, state) |> new_state
+    state |> Led.set_value(:blue, value) |> new_state
   end
   defcast blast, state: state do
-    Led.pi_blast(state) |> new_state
+    state |> Led.pi_blast |> new_state
   end
 
   defp do_update([], state), do: state
