@@ -25,8 +25,6 @@ defmodule RgbLed.Led do
   end
 
   def get_pin(component, color) do
-    IO.puts "component"
-    IO.inspect component
     case color do
       :red   -> component.red
       :green -> component.green

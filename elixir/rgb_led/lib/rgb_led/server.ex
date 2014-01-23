@@ -19,7 +19,7 @@ defmodule RgbLed.Server do
     state |> Led.set_value(:blue, value) |> new_state
   end
   defcast blast, state: state do
-    state |> Led.pi_blast |> new_state
+    state |> Led.pi_blast
   end
 
   defp do_update([], state), do: state
@@ -28,7 +28,6 @@ defmodule RgbLed.Server do
     do_update(t, new_state)
   end
   defp do_update({color, value}, state) do
-    IO.inspect "do_update {#{color}, #{value}}, #{state}"
     state |> Led.set_value(color, value)
   end
 end
