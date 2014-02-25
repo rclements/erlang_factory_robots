@@ -20,7 +20,8 @@ defmodule PinServer.Mixfile do
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
   defp deps do
     [
-      {:exactor, github: "sasa1977/exactor"}
+      {:exactor, github: "sasa1977/exactor"},
+      {:erlang_ale, github: "esl/erlang_ale"}
     ]
   end
 end

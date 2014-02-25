@@ -1,1 +1,2 @@
-[ "exactor": {:git, "git://github.com/sasa1977/exactor.git", "f7f6bae7fead5e0e5525581d44311f803169fa4e", []} ]
+[ "erlang_ale": {:git, "git://github.com/esl/erlang_ale.git", "9a4714db2f3ccf0ece5c3001c4c870c36e4d31e2", []},
+  "exactor": {:git, "git://github.com/sasa1977/exactor.git", "f7f6bae7fead5e0e5525581d44311f803169fa4e", []} ]
