@@ -10,12 +10,15 @@ defmodule RgbLed.Server do
     do_update(values, state) |> new_state
   end
   defcast red(value), state: state do
+    IO.puts "red!, #{value}"
     state |> Led.set_value(:red, value) |> new_state
   end
   defcast green(value), state: state do
+    IO.puts "green, #{value}"
     state |> Led.set_value(:green, value) |> new_state
   end
   defcast blue(value), state: state do
+    IO.puts "blue, #{value}"
     state |> Led.set_value(:blue, value) |> new_state
   end
   defcast blast, state: state do
