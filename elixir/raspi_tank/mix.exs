@@ -19,6 +19,8 @@ defmodule RaspiTank.Mixfile do
   # To specify particular versions, regardless of the tag, do:
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
   defp deps do
-    []
+    [
+      {:exactor, github: "sasa1977/exactor"}
+    ]
   end
 end
