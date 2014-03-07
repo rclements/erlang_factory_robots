@@ -11,8 +11,8 @@ defmodule RaspiTank.Motor do
     PiBlaster.set_pin(number, value)
   end
 
-  defp mapped_value_for(value) do
-    idle + (value * 500)/max_pulse_width
+  defp mapped_value_for(value) when value >= -1 and value <= 1 do
+    idle + (value * 500) / max_pulse_width
   end
 
   defp idle, do: 1_500 / max_pulse_width

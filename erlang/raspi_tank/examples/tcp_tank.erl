@@ -2,7 +2,7 @@
 -export([start/3]).
 
 start(Port, LeftPin, RightPin) ->
-  {ok, LSock} = gen_tcp:listen(Port, [binary, {packet, 0}, 
+  {ok, LSock} = gen_tcp:listen(Port, [binary, {packet, 0},
                                       {active, false}]),
   do_accept(LSock, LeftPin, RightPin).
 

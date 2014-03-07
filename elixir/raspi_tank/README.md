@@ -1,16 +1,19 @@
 # RaspiTank
 
-Run this:
+In `examples/run_tank.exs` you'll find:
 
 ```sh
-iex --name "server@192.168.1.10" --cookie test -pa _build/dev/lib/raspi_tank/ebin/ -pa _build/dev/lib/exactor/ebin/
-```
-
-Then:
-
-```elixir
 {:ok, s} = RaspiTank.Server.start([23, 24])
 :erlang.register(:raspi_tank, s)
+```
+
+You can run it on a node thusly:
+
+```
+iex --name "server@192.168.1.10" --cookie test \
+    -pa _build/dev/lib/raspi_tank/ebin/ \
+    -pa _build/dev/lib/exactor/ebin/ \
+    -r examples/run_tank.exs
 ```
 
 Then the Android app can talk to the server.

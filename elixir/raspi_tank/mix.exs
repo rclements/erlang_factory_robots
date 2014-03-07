@@ -4,7 +4,6 @@ defmodule RaspiTank.Mixfile do
   def project do
     [ app: :raspi_tank,
       version: "0.0.1",
-      elixir: "~> 0.12.1-dev",
       deps: deps ]
   end
 
