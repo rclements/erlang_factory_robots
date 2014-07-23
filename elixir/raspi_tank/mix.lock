@@ -1,1 +1,3 @@
-[ "exactor": {:git, "git://github.com/sasa1977/exactor.git", "f7f6bae7fead5e0e5525581d44311f803169fa4e", []} ]
+%{"arduino_motor_driver": {:git, "git://github.com/knewter/arduino_motor_driver.git", "c4c33a8862fb5686d0e111c012ae2cd036f1c391", []},
+  "erlang-serial": {:git, "git://github.com/knewter/erlang-serial.git", "61821783259551090af7a8561891a345c0547af2", []},
+  "exactor": {:git, "git://github.com/sasa1977/exactor.git", "65a2cef190d2bd654d08c6f9ea49c8533bc432f6", []}}

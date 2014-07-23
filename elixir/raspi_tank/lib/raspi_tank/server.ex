@@ -20,7 +20,6 @@ defmodule RaspiTank.Server do
   end
 
   defcast blast, state: state do
-    state |> Tank.pi_blast
-    noreply
+    #
   end
 end

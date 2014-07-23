@@ -6,6 +6,7 @@ defmodule RaspiTank.Tank do
   def set_speed(left, right, device) do
     ArduinoMotorDriver.left(device, left)
     ArduinoMotorDriver.right(device, right)
+    device
   end
 
   def pi_blast({:tank, left_motor, right_motor}) do
