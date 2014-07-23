@@ -2,17 +2,16 @@ defmodule RaspiTank.Server do
   @moduledoc """
   To start a Tank Server, just do:
 
-      iex> {:ok, pid} = RaspiTank.Server.start(23, 24)
-      iex> pid |> RaspiTank.Server.update(left_speed, right_speed)
-      iex> pid |> RaspiTank.Server.blast
+      iex> {:ok, device} = RaspiTank.Server.start("/dev/ttyACM0")
+      iex> device |> RaspiTank.Server.update(left_speed, right_speed)
 
   """
 
   use ExActor.GenServer
   alias RaspiTank.Tank
 
-  definit([left_pin, right_pin]) do
-    Tank.init(left_pin, right_pin) |> initial_state
+  definit(device_string) do
+    Tank.init(device_string) |> initial_state
   end
 
   defcast update(left_speed, right_speed), state: state do

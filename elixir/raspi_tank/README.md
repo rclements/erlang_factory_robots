@@ -3,7 +3,7 @@
 In `examples/run_tank.exs` you'll find:
 
 ```sh
-{:ok, s} = RaspiTank.Server.start([23, 24])
+{:ok, s} = RaspiTank.Server.start("ttyACM0")
 :erlang.register(:raspi_tank, s)
 ```
 
